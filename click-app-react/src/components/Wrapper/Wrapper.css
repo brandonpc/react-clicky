@@ -7,5 +7,11 @@
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
+    background-image: url("https://www.ssbwiki.com/images/8/86/SSBU-Battlefield.png");
+    /* trying to make it transparent */
+    /* background-color: rgba(0, 0, 0, .75); */
+}
 
+.img-container {
+    border-radius: 50%
 }

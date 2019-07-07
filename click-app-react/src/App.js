@@ -15,7 +15,7 @@ class App extends Component {
     status: ""
   };
 
-  //shuffle the pup cards in the browser when clicked
+  //mix card order every time one is clicked
   mixItUp = id => {
     let clickedPics = this.state.clickedPics;
 
@@ -27,7 +27,7 @@ class App extends Component {
 
       if (clickedPics.length === 8) {
         this.setState({ score: 8, status: "Congratulations! You Won!!", clickedPics: [] });
-        console.log('You Win');
+        console.log('Great! You win!');
         return;
       }
 
@@ -41,19 +41,21 @@ class App extends Component {
   }
 
   // Map over this.state.cards and render a Card component for each card object
+  // Score handles the "scoreboard"|Wrapper is the body|Card is for the pictures
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Clicky React App</h1>
+          <h1 className="App-title">Super Smash Memory</h1>
           <p className="App-intro">
-            Here's how it works: you can't click the same picture twice.
+            Arena Rules: Try and click each character without choosing the same one twice.
           </p>
         </header>
         <Score total={this.state.score}
           goal={8}
           status={this.state.status}
         />
+
         <Wrapper>
           {this.state.pics.map(picture => (
             <Card
