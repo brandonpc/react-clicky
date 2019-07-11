@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
-import Score from "./components/Score";
+import Scoreboard from "./components/Scoreboard";
 import pics from "./cards.json";
 import "./App.css";
 
@@ -20,7 +20,7 @@ class App extends Component {
     let clickedPics = this.state.clickedPics;
 
     if (clickedPics.includes(id)) {
-      this.setState({ clickedPics: [], score: 0, status: "Not quite. Try again." });
+      this.setState({ clickedPics: [], userScore: 0, status: "Not quite. Try again." });
       return;
     } else {
       clickedPics.push(id)
@@ -31,7 +31,7 @@ class App extends Component {
         return;
       }
 
-      this.setState({ pics, clickedPics, score: clickedPics.length, status: " " });
+      this.setState({ pics, clickedPics, userScore: clickedPics.length, status: " " });
 
       for (let i = pics.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -51,7 +51,7 @@ class App extends Component {
             Arena Rules: Try and click each character without choosing the same one twice.
           </p>
         </header>
-        <Score total={this.state.score}
+        <Scoreboard total={this.state.userScore}
           goal={8}
           status={this.state.status}
         />
