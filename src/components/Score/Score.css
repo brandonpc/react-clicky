@@ -12,10 +12,16 @@ h3.score {
     margin-top: 7px;
     padding: 0;
     font-weight: 800;
+
 }
 
 h3.status {
     margin: 0;
-    padding: 0;
+    padding: 5px;
     color: rgb(177, 19, 19);
+    /* BELOW: trying to do a border for the pop-up */
+    /* border-style: double;
+    border-color: rgb(177, 19, 19);
+    border-radius: 5px; */
+
 }
